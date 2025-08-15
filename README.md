@@ -13,7 +13,7 @@ GDD, TDD eventually
 ### Tools
 [Unity Hub](https://unity.com/download) (download the latest version)
 
-Unity 6000.1.15f1
+Unity 6000.2.0f1
 
 Modeling/animations: Blender 4.3.2
 
