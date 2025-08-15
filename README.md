@@ -15,7 +15,7 @@ GDD, TDD eventually
 
 Unity 6000.1.15f1
 
-Modeling/animations: Blender (Version tbd)
+Modeling/animations: Blender 4.3.2
 
 ### Setup
 1. Clone the repository using the git client of your choice. I recommend Github Desktop.
