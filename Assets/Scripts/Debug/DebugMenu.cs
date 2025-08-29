@@ -1,4 +1,5 @@
-using System;
+using Game;
+using Services;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,8 @@ public class DebugMenu : MonoBehaviour
     
     void Start()
     {
-        GameManager.Instance.OnLevelStart.AddListener(OnLevelStart);
-        GameManager.Instance.OnLevelEnd.AddListener(OnLevelEnd);
+        ServiceLocator.Instance.GameManager.OnLevelStart.AddListener(OnLevelStart);
+        ServiceLocator.Instance.GameManager.OnLevelEnd.AddListener(OnLevelEnd);
         
         UpdateButtons(false);
     }
@@ -31,15 +32,9 @@ public class DebugMenu : MonoBehaviour
         UpdateButtons(false);
     }
 
-    private void OnEnable()
-    {
-
-    }
-
     private void OnDisable()
     {
-        GameManager.Instance.OnLevelStart.RemoveListener(OnLevelStart);
-        GameManager.Instance.OnLevelEnd.RemoveListener(OnLevelEnd);
-
+        ServiceLocator.Instance.GameManager.OnLevelStart.RemoveListener(OnLevelStart);
+        ServiceLocator.Instance.GameManager.OnLevelEnd.RemoveListener(OnLevelEnd);
     }
 }
