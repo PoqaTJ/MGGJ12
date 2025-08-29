@@ -39,7 +39,7 @@ jobs:
         with:
           targetPlatform: WebGL
           allowdirtybuild: true
-	  buildProfile: 'Assets/Settings/Build Profiles/Standard.asset'
+          buildProfile: 'Assets/Settings/Build Profiles/Standard.asset'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
