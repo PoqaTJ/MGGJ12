@@ -2,6 +2,7 @@ using Level;
 using Services;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
@@ -16,14 +17,17 @@ namespace Game
         {
             OnLevelStart?.Invoke();
         }
-
+        
         public void WinLevel()
         {
             // start cinamachine to do level transition
             OnLevelEnd?.Invoke();
             OnLevelWin?.Invoke();
 
-            ServiceLocator.Instance.LevelManager.FinishLevel(() => { OnLevelStart?.Invoke(); });
+            ServiceLocator.Instance.LevelManager.FinishLevel(() =>
+            {
+                OnLevelStart?.Invoke();
+            });
         }
 
         public void LoseLevel()
@@ -31,6 +35,8 @@ namespace Game
             // start cinamachine to do end game\
             OnLevelEnd?.Invoke();
             OnLevelLose?.Invoke();
+
+            SceneManager.LoadScene("MainMenu");
         }
 
         public LevelType ChooseNextLevel()
@@ -44,7 +50,6 @@ namespace Game
                 return LevelType.PowerUp;
             }
             return new []{LevelType.ReachFinish, LevelType.Survival, LevelType.KillAllEnemies}[Random.Range(0,3)];
-
         }
     }
 }

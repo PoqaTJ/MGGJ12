@@ -1,4 +1,5 @@
-﻿using Game;
+﻿using Camera;
+using Game;
 using Level;
 using UnityEngine;
 
@@ -39,7 +40,7 @@ namespace Services
 // List services here
         public GameManager GameManager;
         public LevelManager LevelManager;
-        //public DialogManager DialogManager;
+        public CameraManager CameraManager;
         //public SaveManager SaveManager;
         //public AudioManager AudioManager;
         //public ParticleManager ParticleManager;

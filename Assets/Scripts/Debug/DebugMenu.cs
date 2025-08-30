@@ -10,6 +10,14 @@ public class DebugMenu : MonoBehaviour
     
     void Start()
     {
+        winLevelButton.onClick.AddListener(() =>
+        {
+            ServiceLocator.Instance.GameManager.WinLevel();
+        });
+        loseLevelButton.onClick.AddListener(() =>
+        {
+            ServiceLocator.Instance.GameManager.LoseLevel();
+        });
         ServiceLocator.Instance.GameManager.OnLevelStart.AddListener(OnLevelStart);
         ServiceLocator.Instance.GameManager.OnLevelEnd.AddListener(OnLevelEnd);
         
